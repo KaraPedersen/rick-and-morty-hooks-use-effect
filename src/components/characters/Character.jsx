@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Character = ({ name, text, image }) => (
-  <figure>
-    <img src={image} alt={name} />
-    <figcaption>
+const Character = ({ name, image }) => {
+  return (
+    <>
       <h2>{name}</h2>
-      <p>&quot;{text}&quot;</p>
-    </figcaption>
-  </figure>
-);
+      <img src={image} />
+    </>
+  );
+};
 
 Character.propTypes = {
-  name: PropTypes.string,
-  text: PropTypes.string,
-  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Character;

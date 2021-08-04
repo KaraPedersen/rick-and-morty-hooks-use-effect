@@ -13,7 +13,12 @@ const RickAndMortyCharacters = () => {
   }, []);
 
   if(loading) return <h1>Loading...</h1>;
-  return <CharacterList characters={characters} />;
+  return (
+    <>
+      <h1>Rick and Morty Characters</h1>
+      <CharacterList characters={characters}/>
+    </>
+  );
 };
 
 export default RickAndMortyCharacters;
