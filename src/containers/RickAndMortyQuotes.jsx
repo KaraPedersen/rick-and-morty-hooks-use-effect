@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import QuoteList from '../components/quotes/QuoteList';
-import { fetchQuotes } from '../services/rickAndMortyApi';
+import CharacterList from '../components/characters/CharacterList';
+import { fetchCharacters } from '../services/rickAndMortyApi';
 
 const RickAndMortyQuotes = () => {
   const [loading, setLoading] = useState(true);
-  const [quotes, setQuotes] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(async () => {
-    const quotes = await fetchQuotes();
-    setQuotes(quotes);
+    const characters = await fetchCharacters();
+    setCharacters(characters);
     setLoading(false);
   }, []);
 
   if(loading) return <h1>Loading...</h1>;
-  return <QuoteList quotes={quotes} />;
+  return <CharacterList characters={characters} />;
 };
 
 export default RickAndMortyQuotes;
