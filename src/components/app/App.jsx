@@ -1,5 +1,6 @@
 import React from 'react';
+import RickAndMortyQuotes from '../../containers/RickAndMortyQuotes';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <Rick and Morty Quotes />;
 }
