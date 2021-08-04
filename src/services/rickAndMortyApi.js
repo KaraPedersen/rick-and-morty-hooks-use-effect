@@ -7,7 +7,7 @@ export const fetchCharacters = async () => {
   // console.log(character, 'hello world');
   // return character;
   // };
-  console.log(json);
+  
   return json.results.map(({ character, name, image, species }) => ({
     id: `${character} - ${name}`,
     name,

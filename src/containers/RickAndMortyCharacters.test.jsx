@@ -1,16 +1,16 @@
 import React from 'react';
-import { render, screen  } from '@testing-library/react';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import { act, render, screen, waitFor  } from '@testing-library/react';
+// import { rest } from 'msw';
+// import { setupServer } from 'msw/node';
 import RickAndMortyCharacters from './RickAndMortyCharacters';
 
-const server = setupServer(
+// const server = setupServer(
 //   rest.get(
 
-  //     'https://rickandmortyapi.com/api/character',
-  //     (req, res, ctx) => {
-  //       return res(
-  //         ctx.json(
+//     'https://rickandmortyapi.com/api/character',
+//     (req, res, ctx) => {
+//       return res(
+//         ctx.json(
 
 //           [...Array(+req.params.count)].map((_, i) => ({
 //             character: 'Rick',
@@ -21,11 +21,11 @@ const server = setupServer(
 //       );
 //     }
 //   )
-);
+// );
 
 describe('RickAndMortyCharacters container', () => {
-  beforeAll(() => server.listen());
-  afterAll(() => server.close());
+  // beforeAll(() => server.listen());
+  // afterAll(() => server.close());
 
   it('displays a list of characters', async () => {
 
@@ -33,9 +33,17 @@ describe('RickAndMortyCharacters container', () => {
  
 
     screen.getByText('Loading...');
+    await act(async () => {
+      await waitFor(async () => {
+        const ul = await screen.findByRole('list');
+  
+        expect(ul).not.toBeEmptyDOMElement();
+      });
+    });
+    //  await waitFor(async () => {
+    //     const ul = await screen.findByRole('list');
 
-    const ul = await screen.findByRole('list');
-
-    expect(ul).not.toBeEmptyDOMElement();
+  //     expect(ul).not.toBeEmptyDOMElement();
+  //   });
   });
 });
