@@ -17,7 +17,7 @@ CharacterList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      text: PropTypes.string,
+      species: PropTypes.string,
       image: PropTypes.string,
     })
   ).isRequired,

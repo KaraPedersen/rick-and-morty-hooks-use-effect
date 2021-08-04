@@ -11,7 +11,7 @@ export const fetchCharacters = async () => {
   return json.results.map(({ character, name, image, species }) => ({
     id: `${character} - ${name}`,
     name,
-    text: species,
+    species,
     image,
   }));
 };
