@@ -4,8 +4,8 @@ import Character from './Character';
 
 const CharacterList = ({ characters }) => (
   <ul>
-    {characters.map((character) => (
-      <li key={character.id}>
+    {characters.map((character, i) => (
+      <li key={character.id + i}>
         <Character {...character} />
       </li>
     ))}
@@ -15,10 +15,10 @@ const CharacterList = ({ characters }) => (
 CharacterList.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      character: PropTypes.string,
-      location: PropTypes.string,
-      episode: PropTypes.string,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      image: PropTypes.string,
     })
   ).isRequired,
 };

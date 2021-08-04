@@ -7,15 +7,15 @@ import RickAndMortyCharacters from './RickAndMortyCharacters';
 const server = setupServer(
   rest.get(
 
-    'https://rickandmortyapi.com/api/characters/:count',
+    'https://rickandmortyapi.com/api/character',
     (req, res, ctx) => {
       return res(
         ctx.json(
 
           [...Array(+req.params.count)].map((_, i) => ({
-            character: '',
-            location: `This is location #${i}`,
-            episode: 'http://image.com',
+            character: 'Rick',
+            quote: `This is quote #${i}`,
+            image: 'http://image.com',
           }))
         )
       );
@@ -33,7 +33,7 @@ describe('RickAndMortyCharacters container', () => {
 
     screen.getByText('Loading...');
 
-    const ul = await screen.findByRole('character');
+    const ul = await screen.findByRole('list');
 
     expect(ul.children.length).toEqual(5);
   });
