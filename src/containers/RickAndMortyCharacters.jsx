@@ -12,7 +12,7 @@ const RickAndMortyCharacters = () => {
     setLoading(false);
   }, []);
 
-  if(loading) return <h1>this sucks chicken butt...</h1>;
+  if(loading) return <h1>Loading...</h1>;
   return <CharacterList characters={characters} />;
 };
 
