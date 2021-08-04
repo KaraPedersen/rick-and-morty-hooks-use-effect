@@ -1,6 +1,6 @@
 import React from 'react';
-import RickAndMortyQuotes from '../../containers/RickAndMortyQuotes';
+import RickAndMortyCharacters from '../../containers/RickAndMortyCharacters';
 
 export default function App() {
-  return <RickAndMortyQuotes />;
+  return <RickAndMortyCharacters />;
 }

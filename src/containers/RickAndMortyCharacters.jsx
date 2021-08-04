@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CharacterList from '../components/characters/CharacterList';
 import { fetchCharacters } from '../services/rickAndMortyApi';
 
-const RickAndMortyQuotes = () => {
+const RickAndMortyCharacters = () => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
@@ -16,4 +16,4 @@ const RickAndMortyQuotes = () => {
   return <CharacterList characters={characters} />;
 };
 
-export default RickAndMortyQuotes;
+export default RickAndMortyCharacters;

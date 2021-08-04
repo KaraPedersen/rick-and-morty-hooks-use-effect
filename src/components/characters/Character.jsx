@@ -12,9 +12,9 @@ const Character = ({ character, location, episode }) => (
 );
 
 Character.propTypes = {
-  character: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  episode: PropTypes.string.isRequired,
+  character: PropTypes.string,
+  location: PropTypes.string,
+  episode: PropTypes.string,
 };
 
 export default Character;
